@@ -1,0 +1,11 @@
+#!/bin/bash
+
+question=$1
+model="openhermes2.5-mistral"
+
+if [ -n "$2" ]; then
+	sources=$(./ragpipe "\"$question\"" -f ${@:2})
+	ollama run --verbose $model """Please answer '$question' -------------------- Reference material: ------------- $sources ------------------ Please answer the query using the provided information: '$question' Do not say anything else or give any other information. Only answer the question '$question'"""
+else
+	ollama run --verbose $model $question
+fi

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+question=$1
+model=openhermes2.5-mistral
+
+if [ -n "$2" ]; then
+	sources=${@:2}
+	ollama run --verbose $model """Please answer '$question' -------------------- Below is the text that's been on screen recently. ------------- $sources ------------------ Please answer the query using the provided information about what has been on the scren recently: '$question' Do not say anything else or give any other information. Only answer the question '$question'"""
+else
+	ollama run --verbose $model $question
+fi
