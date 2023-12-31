@@ -97,7 +97,7 @@ def merge_texts(texts):
     return merged_text
 
 def main():
-    parser = argparse.ArgumentParser(description="Text search using HNSW and BM25.")
+    parser = argparse.ArgumentParser(description="Text search using HNSW and fuzzywuzzy.")
     parser.add_argument("query", type=str, help="Search query.")
     parser.add_argument("-f", "--file", type=str, help="Path to a text file to use as input.")
     parser.add_argument("-t", "--text", type=str, help="Direct text input.")
