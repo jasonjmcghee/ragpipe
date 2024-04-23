@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ragpipe"
+version = "0.1.0"
+description = "Pipe large text corpus to an in-memory embedding, and query it inline"
+authors = ["Jason McGhee <mcghee.j@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "3.11.6"
+hnswlib = "*"
+numpy = "*"
+sentence-transformers = "*"
+tqdm = "*"
+"pdfminer.six" = "*"
+fuzzywuzzy = "*"
+python-Levenshtein = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
